@@ -1,0 +1,19 @@
+.para{
+    border:solid 1px;
+    margin:10px 10px;
+    background-color: orange;
+    padding: 10px 30px;
+}
+ button {
+    background-color: blue; margin:10px;
+    margin:10px;
+    padding:10px;
+    
+    
+ }   
+ button a{
+    text-decoration: none;
+    color:white;
+    font-size: larger;
+    
+ }
