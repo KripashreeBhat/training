@@ -1,0 +1,97 @@
+<div class="form">
+  <form #admission="ngForm" (submit)="admissionform(admission)">
+    <h2> Registration Form</h2>
+    <label for="firstname">Firstname: </label>
+    <input
+      type="text"
+      id="firstname"
+      [(ngModel)]="firstname"
+      name="firstname"
+    />
+    
+    <label for="middlename">Middlename: </label>
+    <input
+      type="text"
+      id="middlename"
+      [(ngModel)]="middlename"
+      name="middlename"
+      placeholder="(optional)">
+    
+    <label for="lastname">Lastname: </label>
+    <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname" />
+
+    <label for="gender">Gender:</label>
+    <input
+      type="radio"
+      id="gender"
+      [(ngModel)]="gender"
+      name="gender"
+      value="male"
+    />Male
+    <input
+      type="radio"
+      id="gender"
+      [(ngModel)]="gender"
+      name="gender"
+      value="female"
+    />Female
+    <input
+      type="radio"
+      id="gender"
+      [(ngModel)]="gender"
+      name="gender"
+      value="other"
+    />Others
+
+    <label for="fathername">Father'sname: </label>
+    <input
+      type="text"
+      id="fathername"
+      [(ngModel)]="fathername"
+      name="fathername"
+    />
+
+    <label for="mothername">Mother'sname: </label>
+    <input
+      type="text"
+      id="mothername"
+      [(ngModel)]="mothername"
+      name="mothername"
+    />
+
+    <label for="dob">DOB: </label>
+    <input type="date" id="dob" name="dob" /><br />
+
+    <label for="phone">Mobile No:</label>
+    <input type="tel" id="phone" [(ngModel)]="phone" name="phone" /><br />
+
+    <label for="mail" >Email:</label>
+    <input type="email" id="mail"  [(ngModel)]="mail" name="mail" /><br />
+
+    <label for="board">10<sup>th</sup> Board: </label>
+    <input type="text" id="board" [(ngModel)]="board" name="board" /><br />
+
+    <label for="grade">10<sup>th</sup> Grade: </label>
+    <input type="text" id="grade" [(ngModel)]="grade" name="grade" /><br />
+
+    <label for="boardd">12<sup>th</sup> Board: </label>
+    <input type="text" id="boardd" [(ngModel)]="boardd" name="boardd" /><br />
+
+    <label for="gradee">12<sup>th</sup> Grade: </label>
+    <input type="text" id="gradee"[(ngModel)]="gradee" name="gradee" /><br />
+
+    <label for="domain">Domain preference:</label>
+    <select id ="domain"[(ngModel)]="domain" name="domain">
+      <option value="1">ComputerScience Engineering</option>
+      <option value="2">Mechanical Engineering</option>
+      <option value="3">AI ML Engineering</option>
+      <option value="4">Electronics Engineering</option>
+      <option value="5">Civil Engineering</option>
+    </select><br />
+
+    <input type="checkbox" id="checkbox"[(ngModel)]="terms" name="terms" />I hereby declare
+    that the information provided is true.<br />
+
+    <button type="submit" >Submit</button>
+  </form>
+</div>

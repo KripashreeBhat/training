@@ -5,7 +5,7 @@ import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-student',
   template: `<h3>
-                  Student Info
+                  Founders Info
                   </h3>
                   <ul>
                   <li (click) ="onSelect(student)" [class.selected] = "isSelected(student)"*ngFor="let student of students">

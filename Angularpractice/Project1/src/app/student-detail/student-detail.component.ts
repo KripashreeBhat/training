@@ -5,14 +5,23 @@ import { ParamMap } from '@angular/router';
   selector: 'app-student-detail',
   template: `
     <h4> selected id ={{studentId}} <h4>
-    <button (click) = "showResult()">Result</button>&nbsp;
+    <button><a (click) = "showResult()">Profile </a></button>&nbsp;
     <button ><a (click)="showContact()">Contact</a></button><br>
     <router-outlet></router-outlet>
     <p><button><a (click)="goPrev()">Prev</a></button>&nbsp;
     <button><a (click)="goNext()">Next</a></button><br></p>
-    <p><button (click) ="gotostud()"> <- BACK</button></p>
+    <p><button><a (click) ="gotostud()"> <- BACK </a></button></p>
   `,
-  styles: [
+  styles: [`button{
+    margin:10px;
+    padding:10px;
+    background-color:black;
+
+  }
+  button a{
+    color:white;
+    font-size:larger;
+  }`
   ]
 })
 export class StudentDetailComponent implements OnInit {

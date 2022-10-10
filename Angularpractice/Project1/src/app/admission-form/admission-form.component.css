@@ -1,0 +1,20 @@
+form{
+    border: 2px solid;
+    margin:2%;
+    width: 35%;
+    padding:1%;
+    line-height: 2em;
+    background-color: #b3a9a9;
+}
+button{
+    width:40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+button:hover{
+    background-color: green;
+}
+h2{
+    text-align: center;
+    color:red;
+}
