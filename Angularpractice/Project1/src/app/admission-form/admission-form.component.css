@@ -1,20 +1,61 @@
-form{
-    border: 2px solid;
-    margin:2%;
-    width: 35%;
-    padding:1%;
-    line-height: 2em;
-    background-color: #b3a9a9;
+.form{
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 45%;
+    padding:2px;
+    line-height: 2em;   
 }
-button{
-    width:40%;
-    margin-left: 30%;
-    margin-right: 30%;
+.form-wrap button{
+    width:45%;
+    margin:2% 25%;
+    display: block;
+    cursor: pointer;
+    line-height: 1.8em;
+    background-color:purple;
+    color: #fff;
 }
-button:hover{
+.form-wrap button:hover{
     background-color: green;
 }
 h2{
     text-align: center;
-    color:red;
+    color:purple;
+    font-size: 30px;
+}
+.form-wrap{
+    background-color:#DACCEC;
+    padding: 15px 35px
+}
+
+.form-wrap .form-group{
+    margin-top: 15px;
+}
+.form-wrap .form-group label{
+    display: block;
+    color:#342C3F;
+   
+}
+.form-wrap .form-group input{
+    width:100%;
+    padding:10px 5px;
+    border:#ddd 1px solid;
+    border-radius: 5px;
+
+}
+.checkbox{
+    margin:1%;
+}
+.form-group-gender{
+    word-spacing: 100px;
+    
+    /* text-align: center; */
+}
+.form-group input.ng-invalid.ng-touched{
+    border:1px solid #f00;
+}
+.required{
+    color: #f00;
+}
+small{
+    color: #f00; 
 }
