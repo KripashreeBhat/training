@@ -1,12 +1,14 @@
 <div class="form">
   <div class="form-wrap">
+    <div class="display">
     <div class="photo">
-      <!-- <img src="/assets/clglogo.png" alt="">
-       -->
+       <img src="/assets/clglogo.png" alt="clg logo">
+       
     </div>
+    <div class="heading">
     <h2>SMVIT</h2>
     <h2>Registration Form</h2>
-
+  </div></div>
     <p><small>( * Mandatory field )</small></p>
     <form #admission="ngForm" (submit)="admissionform(admission)">
       <div class="form-group">
@@ -113,7 +115,7 @@
           name="phone"
           required
           minlength="10"
-        /><br />
+        />
       </div>
       <div class="form-group">
         <label for="mail">Email:<sup class="required">*</sup></label>
@@ -182,13 +184,13 @@
           id="checkbox"
           [(ngModel)]="registerModel.terms"
           name="terms"
-          required
-        />I hereby declare that the information provided is true.<sup
-          class="required"
-          >*</sup
+          required/>
+          I hereby declare that the information provided is true.<sup
+          class="required">*</sup
         ><br />
       </div>
-      <button type="submit" [disabled]="!admission.valid">Submit</button>
+      <div class="form-group">
+      <button type="submit" [disabled]="!admission.valid">Submit</button></div>
     </form>
   </div>
 </div>
