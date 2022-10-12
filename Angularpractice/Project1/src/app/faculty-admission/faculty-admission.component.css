@@ -1,0 +1,10 @@
+.required-field{
+    color:#f00;
+}
+/* .container{
+    display:block; */
+/* } */
+.form input{
+   display:block;
+   color:brown; 
+}

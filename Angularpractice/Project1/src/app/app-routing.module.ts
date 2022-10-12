@@ -1,29 +1,31 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { DomainDetailComponent } from './domain-detail/domain-detail.component';
-import { DomainComponent } from './domain/domain.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ResultComponent } from './result/result.component';
-import { StudentDetailComponent } from './student-detail/student-detail.component';
-import { StudentComponent } from './student/student.component';
-import { AdmissionFormComponent } from './admission-form/admission-form.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { ContactComponent } from "./contact/contact.component";
+import { DomainDetailComponent } from "./domain-detail/domain-detail.component";
+import { DomainComponent } from "./domain/domain.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ResultComponent } from "./result/result.component";
+import { StudentDetailComponent } from "./student-detail/student-detail.component";
+import { StudentComponent } from "./student/student.component";
+import { AdmissionFormComponent } from "./admission-form/admission-form.component";
+import { FacultyAdmissionComponent } from "./faculty-admission/faculty-admission.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/student', pathMatch: 'full' },
-  { path: 'student', component: StudentComponent },
+  { path: "", redirectTo: "/student", pathMatch: "full" },
+  { path: "student", component: StudentComponent },
   {
-    path: 'student/:id',
+    path: "student/:id",
     component: StudentDetailComponent,
     children: [
-      { path: 'result', component: ResultComponent },
-      { path: 'contact', component: ContactComponent },
+      { path: "result", component: ResultComponent },
+      { path: "contact", component: ContactComponent },
     ],
   },
-  { path: 'domain', component: DomainComponent },
-  { path: 'domain/:name', component: DomainDetailComponent },
-  {path : 'admission-form', component: AdmissionFormComponent},
-  { path: '**', component: PageNotFoundComponent },
+  { path: "domain", component: DomainComponent },
+  { path: "domain/:name", component: DomainDetailComponent },
+  { path: "admission-form", component: AdmissionFormComponent },
+  { path: "post-admission", component: FacultyAdmissionComponent },
+  { path: "**", component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -39,5 +41,6 @@ export const routingComponent = [
   ResultComponent,
   ContactComponent,
   AdmissionFormComponent,
+  FacultyAdmissionComponent,
   PageNotFoundComponent,
 ];

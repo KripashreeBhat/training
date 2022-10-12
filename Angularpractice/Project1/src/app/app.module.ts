@@ -5,7 +5,7 @@ import { AppRoutingModule ,routingComponent} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HoverDirective } from './hover.directive';
 import { BackgroundDirective } from './background.directive';
-import { AdmissionFormComponent } from './admission-form/admission-form.component';
+// import { AdmissionFormComponent } from './admission-form/admission-form.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { StudentDetailComponent } from './student-detail/student-detail.component';
 // import { DomainDetailComponent } from './domain-detail/domain-detail.component';
@@ -13,7 +13,8 @@ import { AdmissionFormComponent } from './admission-form/admission-form.componen
 // import { ContactComponent } from './contact/contact.component';
 // import { StudentComponent } from './student/student.component';
 // import { DomainComponent } from './domain/domain.component';
-import { FormsModule } from '@angular/forms';
+// import { FacultyAdmissionComponent } from './faculty-admission/faculty-admission.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,12 @@ import { FormsModule } from '@angular/forms';
     routingComponent,
     HoverDirective,
     BackgroundDirective,
-    AdmissionFormComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
