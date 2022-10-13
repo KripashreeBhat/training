@@ -2,53 +2,62 @@
 <div class="container">
 <form [formGroup]="addFacultyForm">
     <div class="form">
-    <label>First Name:</label>
+    <label for="firstname">First Name:</label>
     <input type="text" formControlName="fname">
     <div>
-    <span class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('required') && addFacultyForm.get('fname')?.touched">First name is required</span>
-    <span class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('pattern') && addFacultyForm.get('fname')?.touched">Invalid input, please enter input in Alphabets</span>
+    <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('required') && addFacultyForm.get('fname')?.touched">First name is required</small>
+    <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('pattern') && addFacultyForm.get('fname')?.touched">Invalid input, please enter input in Alphabets</small>
+    <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('noSpaceForName') ">No space allowed!</small>
 </div></div>
 <div class="form">
-    <label>Last Name:</label>
+    <label for="middlename">Middle Name:</label>
+    <input type="text" formControlName="mname" placeholder="(optional)">
+</div>
+<div class="form">
+    <label for="lastname">Last Name:</label>
     <input type="text" formControlName="lname">
     <div>
-    <span class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('required') && addFacultyForm.get('lname')?.touched">Last name is required</span>
-    <span class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('pattern') && addFacultyForm.get('lname')?.touched">Invalid input, please enter input in Alphabets</span>
+    <small class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('required') && addFacultyForm.get('lname')?.touched">Last name is required</small>
+    <small class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('pattern') && addFacultyForm.get('lname')?.touched">Invalid input, please enter input in Alphabets</small>
 </div></div>
+
  <div class="form">
- <label>Age:</label>
+ <label for="age">Age:</label>
  <input type ="text" formControlName="age">
  <div>
-    <span class="required-field" *ngIf="addFacultyForm.get('age')?.hasError('required') && addFacultyForm.get('age')?.touched">Age is required</span>
+    <small class="required-field" *ngIf="addFacultyForm.get('age')?.hasError('required') && addFacultyForm.get('age')?.touched">Age is required</small>
+    <small class="required-field" *ngIf="addFacultyForm.get('age')?.hasError('ageRestriction') "> Age limit is 60!</small>
    
 </div>
  </div>
  <div class="form">
-    <label>Mobile No:</label>
+    <label for="mobileno">Mobile No:</label>
     <input type ="text" formControlName="mobileno">
     <div>
-        <span class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('required') && addFacultyForm.get('mobileno')?.touched">Mobile No is required</span>
-        <span class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('minlength') && addFacultyForm.get('mobileno')?.touched">Minimum limit is 10 digits</span>
-        <span class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('maxlength') && addFacultyForm.get('mobileno')?.touched">Maximum limit is 10 digits</span>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('required') && addFacultyForm.get('mobileno')?.touched">Mobile No is required</small>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('minlength') && addFacultyForm.get('mobileno')?.touched">Minimum limit is 10 digits</small>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('maxlength') && addFacultyForm.get('mobileno')?.touched">Maximum limit is 10 digits</small>
     </div>
     </div>
     <div class="form">
-        <label>Email:</label>
+        <label for="email">Email:</label>
         <input type ="text" formControlName="email">
         <div>
-            <span class="required-field" *ngIf="addFacultyForm.get('email')?.hasError('required') && addFacultyForm.get('email')?.touched">Email is required</span>
+            <small class="required-field" *ngIf="addFacultyForm.get('email')?.hasError('required') && addFacultyForm.get('email')?.touched">Email is required</small>
+        </div>
+        </div>
+        <div class = "form" formArrayName = "education">
+            <ng-container *ngFor ="let e of addFacultyForm.get('education')['controls'];index as i">
+            <input type= "text" formControlName="{{i}}">
+        </ng-container>
+        <button (click)="addeducation()"> + Educational detail</button>
+        </div>
+        <div class="form">  
+       <button (click)="addFaculty()" [disabled]="!addFacultyForm.valid">Submit</button>
+       <button (click)="resetForm()">Reset</button>
+   </div>
+   </form>
+   </div>
+       
             
-        </div>
-        </div>
-<!--         
-            <div class="form" formArrayName="students">
-                <label>Educational info</label>
-                <div *ngFor="let student of addFacultyForm.controls.students['controls']; index as i "></div>
-                <input type ="text" [formControlName]="i">
-                </div> -->
-     <div class="form">   
-    <button (click)="addFaculty()" [disabled]="!addFacultyForm.valid">Submit</button>
-    <button (click)="resetForm()">Reset</button>
-</div>
-</form>
-</div>
+        

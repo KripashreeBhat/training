@@ -6,5 +6,9 @@
 /* } */
 .form input{
    display:block;
-   color:brown; 
+   /* color:brown;  */
+}
+ input.ng-invalid.ng-touched{
+
+    border:1px #f00 solid;
 }
