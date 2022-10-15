@@ -1,28 +1,60 @@
 <!-- <p>faculty-admission works!</p> -->
-<div class="container">
-<form [formGroup]="addFacultyForm">
-    <div class="form">
-    <label for="firstname">First Name:</label>
+<div class="form">
+    <div class="form-wrap">
+        <div class="display">
+            <div class="photo">
+               <img src="/assets/clglogo.png" alt="clg logo">
+               
+            </div>
+            <div class="heading">
+                <h2>SMVITM</h2>
+                <h2>Admission Form</h2>
+                <h2>(PG)</h2>
+            </div></div>
+            <p><small>( * Mandatory field )</small></p>
+            <form [formGroup]="addFacultyForm">
+
+    <div class="form-group">
+    <label for="firstname">First Name<sup class="required">*</sup></label>
     <input type="text" formControlName="fname">
     <div>
     <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('required') && addFacultyForm.get('fname')?.touched">First name is required</small>
     <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('pattern') && addFacultyForm.get('fname')?.touched">Invalid input, please enter input in Alphabets</small>
     <small class="required-field" *ngIf="addFacultyForm.get('fname')?.hasError('noSpaceForName') ">No space allowed!</small>
 </div></div>
-<div class="form">
+
+<div class="form-group">
     <label for="middlename">Middle Name:</label>
     <input type="text" formControlName="mname" placeholder="(optional)">
 </div>
-<div class="form">
-    <label for="lastname">Last Name:</label>
+<div class="form-group">
+    <label for="lastname">Last Name:<sup class="required">*</sup></label>
     <input type="text" formControlName="lname">
     <div>
     <small class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('required') && addFacultyForm.get('lname')?.touched">Last name is required</small>
     <small class="required-field" *ngIf="addFacultyForm.get('lname')?.hasError('pattern') && addFacultyForm.get('lname')?.touched">Invalid input, please enter input in Alphabets</small>
 </div></div>
-
- <div class="form">
- <label for="age">Age:</label>
+<div class="form-group-gender">
+    <mat-radio-group formControlName="gender">Gender:
+    <mat-radio-button value="male" formControlName="gender">Male</mat-radio-button>
+    <mat-radio-button value="female" formControlName="gender">Female</mat-radio-button>
+    <mat-radio-button value="other" formControlName="gender">Other</mat-radio-button>
+</mat-radio-group>
+</div>
+<div class="form-group">
+    <label for="fathername">Father's Name:<sup class="required">*</sup></label>
+    <input type="text" formControlName="fathername">
+    <div>
+    <small class="required-field" *ngIf="addFacultyForm.get('fathername')?.hasError('required') && addFacultyForm.get('fathername')?.touched">Father's name is required</small>
+</div></div>
+<div class="form-group">
+    <label for="mothername">Mother's Name:<sup class="required">*</sup></label>
+    <input type="text" formControlName="mothername">
+    <div>
+    <small class="required-field" *ngIf="addFacultyForm.get('mothername')?.hasError('required') && addFacultyForm.get('mothername')?.touched">Mother's name is required</small>
+</div></div>
+ <div class="form-group">
+ <label for="age">Age:<sup class="required">*</sup></label>
  <input type ="text" formControlName="age">
  <div>
     <small class="required-field" *ngIf="addFacultyForm.get('age')?.hasError('required') && addFacultyForm.get('age')?.touched">Age is required</small>
@@ -30,34 +62,67 @@
    
 </div>
  </div>
- <div class="form">
-    <label for="mobileno">Mobile No:</label>
+ 
+ <div class="form-group">
+    <label for="mobileno">Mobile No:<sup class="required">*</sup></label>
     <input type ="text" formControlName="mobileno">
     <div>
         <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('required') && addFacultyForm.get('mobileno')?.touched">Mobile No is required</small>
-        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('minlength') && addFacultyForm.get('mobileno')?.touched">Minimum limit is 10 digits</small>
-        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('maxlength') && addFacultyForm.get('mobileno')?.touched">Maximum limit is 10 digits</small>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('minlength') && addFacultyForm.get('mobileno')?.touched">Minimum limit is 10 digits<br></small>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('maxlength') && addFacultyForm.get('mobileno')?.touched">Maximum limit is 10 digits<br></small>
+        <small class="required-field" *ngIf="addFacultyForm.get('mobileno')?.hasError('pattern')">Invalid input</small>
     </div>
     </div>
-    <div class="form">
-        <label for="email">Email:</label>
-        <input type ="text" formControlName="email">
+    <div class="form-group">
+        <label for="email">Email:<sup class="required">*</sup></label>
+        <input type ="text" placeholder="Eg: abc@gmail.com" formControlName="email">
         <div>
             <small class="required-field" *ngIf="addFacultyForm.get('email')?.hasError('required') && addFacultyForm.get('email')?.touched">Email is required</small>
+            <small class="required-field" *ngIf="addFacultyForm.get('email')?.hasError('email') && addFacultyForm.get('email')?.touched">Please enter valid email</small>
         </div>
         </div>
-        <div class = "form" formArrayName = "education">
+
+       <div class="form-group" formGroupName="address">
+        <label for="address">Address:</label>
+         <input type="text" placeholder="House/Flat No.." formContolName="HouseNo">
+         <div>
+            <!-- <span class="required-field" *ngIf="addFacultyForm.get('address.HouseNo')?.hasError('required')">hgsau</span> -->
+         </div>
+         <input type="text" placeholder="(optional)" formContolName="Landmark">
+         <input type="text" placeholder="city.." formContolName="city">
+         <input type="text" placeholder="state.." formContolName="state">
+         <input type="text" placeholder="Postalcode.." formContolName="Postalcode">
+       </div>
+        <div class = "form-group" formArrayName = "education">
             <ng-container *ngFor ="let e of addFacultyForm.get('education')['controls'];index as i">
-            <input type= "text" formControlName="{{i}}">
+                <label for="grade">12<sup>th</sup>Grades:</label>
+                <input type= "text" placeholder="12th grade" [formControlName]="i">
+                <label for="grade">UG Grades</label>
+            <input type= "text" placeholder="UG grade" [formControlName]="i">
         </ng-container>
-        <button (click)="addeducation()"> + Educational detail</button>
+        <button (click)= "addeducation()" *ngIf="count < 1"  >Add educational details<sup class="required">*</sup></button>
+    </div>
+        <div class="form-group-select">
+            <label for="domain">Domain preference:<sup class="required">*</sup></label>
+          <select id="domain"  name="domain" formControlName="domain">
+            <option value="1">MTech</option>
+          <option value="2">MBA(Masters in Buisness Administration)</option>
+          <option value="3">PGDM(PG Diploma in Management)</option>
+          <option value="4">Project Management</option>
+           </select>
         </div>
-        <div class="form">  
-       <button (click)="addFaculty()" [disabled]="!addFacultyForm.valid">Submit</button>
-       <button (click)="resetForm()">Reset</button>
+        <div class="checkbox">
+            <mat-checkbox formControlName="terms">
+              I hereby declare that the information provided is true.<sup class="required">*</sup
+            ></mat-checkbox><br />
+          </div>
+        <div class="form-group">  
+       <button mat-raised-button (click)="addFaculty()" [disabled]="!addFacultyForm.valid">Submit</button>
+       <!-- <button (click)="resetForm()">Reset</button> -->
    </div>
-   </form>
+</form>
+</div>
    </div>
-       
+   
             
         

@@ -1,6 +1,7 @@
 import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+// import {MAT_FORM_FIELD, MatFormField, MatFormFieldControl} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-faculty-admission',
@@ -9,7 +10,8 @@ import { FormArray, FormBuilder, FormControl, FormControlName, FormGroup, Valida
 })
 export class FacultyAdmissionComponent implements OnInit {
 addFacultyForm : FormGroup;
-
+// public disp;
+public count=0;
   constructor( private formbuilder:FormBuilder) { }
 get form(){
   return this.addFacultyForm.get;
@@ -21,20 +23,41 @@ get form(){
   //     'lname': new FormControl()
   // }),
   
-  // This is through FormBuiler
   
+  // This is through FormBuiler
   //case 1 : FormArray with FormComponent
   this.addFacultyForm = this.formbuilder.group({
   fname: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z]+$'),this.noSpaceForName]),
+  mname:new FormControl(''),
   lname: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z]+$')]), 
+  gender:new FormControl(''),
+  fathername:new FormControl('',[Validators.required]),
+  mothername:new FormControl('',[Validators.required]),
   age: new FormControl('',[Validators.required,this.ageRestriction]),
-  mobileno:new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
-  email:new FormControl('',[Validators.required]),
+  mobileno:new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('^[0-9]*$')]),
+  email:new FormControl('',[Validators.required,Validators.email]),
   
+  address: this.formbuilder.group({
+    HouseNo: new FormControl(''),
+    street:new FormControl(''),
+    Landmark:new FormControl(''),
+    city:new FormControl(''),
+    state:new FormControl(''),
+    Postalcode:new FormControl('')
+    
+  }),
+  domain:new FormControl('',Validators.required),
+  terms:new FormControl('',Validators.required),
   education:new FormArray([
-    // new FormControl(null,Validators.required),
-  ])
+    // new FormControl(null,Validators.required), 
+    // this.formbuilder.control(''),
+ 
+  ]),
 });
+
+  
+
+
 // Set values
 // // First way :Direct way
 // this.addFacultyForm = this.formbuilder.group({
@@ -57,18 +80,20 @@ get form(){
 // this.addFacultyForm.patchValue(studentDetail);
 // Track value changes
 this.addFacultyForm.get('lname')?.valueChanges.subscribe(data=>{console.log(data);});
-this.addFacultyForm.get('fname')?.statusChanges.subscribe(data=>{console.log('Input status');console.log(data);});
+this.addFacultyForm.get('fname')?.statusChanges.subscribe(data=>{console.log('status');console.log(data);});
 }
 addFaculty(){
   console.log(this.addFacultyForm.value);
   // console.log(this.addFacultyForm.get('email')?.value);
 // console.log(this.addFacultyForm.valueChanges.subscribe(data =>console.log(data)));
 }
-resetForm(){
-  this.addFacultyForm.reset();
-}
+// resetForm(){
+//   this.addFacultyForm.reset();
+// }
 addeducation(){
   (<FormArray>this.addFacultyForm.get('education')).push((new FormControl(null,Validators.required)))
+  // this.count= true;
+  this.count++;
 }
 // Custom validation
 noSpaceForName(control : FormControl){

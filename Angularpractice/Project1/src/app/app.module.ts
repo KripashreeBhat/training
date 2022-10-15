@@ -15,6 +15,9 @@ import { BackgroundDirective } from './background.directive';
 // import { DomainComponent } from './domain/domain.component';
 // import { FacultyAdmissionComponent } from './faculty-admission/faculty-admission.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HoverDirective,
     BackgroundDirective,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
+    
   providers: [],
   bootstrap: [AppComponent]
 })
