@@ -24,6 +24,7 @@
     line-height: 2em;   
     display: flex;
 }
+
 .form-wrap button{
     width:45%;
     margin:2% 25%;
@@ -71,6 +72,7 @@ h2{
 }
 .checkbox{
     margin:1%;
+    color: #7F3F28;
 }
 .form-group-gender{
     display: flex;
@@ -120,3 +122,12 @@ img {
     margin-left: 30px;
   
   }
+  .material-icons.md-18 { font-size: 18px; }
+  .mat-form-field{
+    display: block;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+ 
+  

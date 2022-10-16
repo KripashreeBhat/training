@@ -5,6 +5,7 @@
     padding:2px;
     line-height: 2em;   
     display: flex;
+    /* background-image: url('assets\formbg.jpeg'); */
 }
 .form-wrap button{
     width:45%;

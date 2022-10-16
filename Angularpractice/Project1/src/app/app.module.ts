@@ -17,6 +17,9 @@ import { BackgroundDirective } from './background.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { SignInComponent } from './sign-in/sign-in.component';
+
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 
 @NgModule({
@@ -25,7 +28,11 @@ import { MaterialModule } from './material/material.module';
     routingComponent,
     HoverDirective,
     BackgroundDirective,
+    SignInComponent,
+  
+    DialogBoxComponent,
   ],
+  entryComponents:[ DialogBoxComponent],
   
   imports: [
     BrowserModule,

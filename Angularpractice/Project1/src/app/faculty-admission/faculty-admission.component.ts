@@ -33,7 +33,7 @@ get form(){
   gender:new FormControl(''),
   fathername:new FormControl('',[Validators.required]),
   mothername:new FormControl('',[Validators.required]),
-  age: new FormControl('',[Validators.required,this.ageRestriction]),
+  age: new FormControl('',[Validators.required,Validators.pattern('^[0-9]*$'),this.ageRestriction]),
   mobileno:new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('^[0-9]*$')]),
   email:new FormControl('',[Validators.required,Validators.email]),
   

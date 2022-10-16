@@ -9,6 +9,7 @@ import { StudentDetailComponent } from "./student-detail/student-detail.componen
 import { StudentComponent } from "./student/student.component";
 import { AdmissionFormComponent } from "./admission-form/admission-form.component";
 import { FacultyAdmissionComponent } from "./faculty-admission/faculty-admission.component";
+import { SignInComponent } from "./sign-in/sign-in.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/student", pathMatch: "full" },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "domain/:name", component: DomainDetailComponent },
   { path: "admission-form", component: AdmissionFormComponent },
   { path: "post-admission", component: FacultyAdmissionComponent },
+  { path:"sign-in",component:SignInComponent},
   { path: "**", component: PageNotFoundComponent },
 ];
 
@@ -42,5 +44,6 @@ export const routingComponent = [
   ContactComponent,
   AdmissionFormComponent,
   FacultyAdmissionComponent,
+  SignInComponent,
   PageNotFoundComponent,
 ];

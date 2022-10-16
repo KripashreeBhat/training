@@ -15,7 +15,7 @@ this.background="lightpink";
 this.border="coral 2px solid"
 }
 @HostListener('mouseleave')onmouseleave(){
-  this.background="#FF8585";
+  this.background="transparent";
   this.border="none"
 }
 }

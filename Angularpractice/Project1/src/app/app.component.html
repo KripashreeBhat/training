@@ -1,7 +1,9 @@
+<div class="background">
+  <body background="\assets\smvitmclgpanel.png">
 <div style = "text-align:center;border:solid 1px; padding:1px; color:#fff; background-color: #8F1F37;" appHover >
   <h1> Shri Madhwa Vadiraja Institue Of Technology And Management</h1>
 </div>
-<div class="para" appBackground>
+<!-- <div class="para" appBackground>
   <h3 id = "about">About</h3>
   <p>
     Shri Madhwa Vadiraja Institute of Technology & Management is an engineering college located in Bantakal, near the temple town Udupi.
@@ -11,10 +13,12 @@
      The college was established in 2010 by Shri Sode Vadiraja Mutt Education Trust as Shri Madhwa Vadiraja Institute of Technology and Management under the guidance of H. H. Shri Vishwavallabha Theertha Swamiji of Shri Sode Vadiraja Mutt, Udupi who is the president of the trust. The initial intake was 60 students in 4 disciplines: 
      civil engineering, mechanical engineering, electronics & communication engineering and computer science & engineering.
   </p>
-</div>
-
+</div> -->
 <button ><a routerLink ="/student" [queryParams]="{collegename : 'SMVITM'}">Founders </a>  </button>
-<button><a routerLink="/domain" > Domain</a></button>
-<button><a routerLink="/admission-form" > Student Admission (UG)</a></button>
-<button><a routerLink="/post-admission" > Student Admission (PG)</a></button>
+      <button><a routerLink="/domain" > Domain</a></button>
+      <button><a routerLink="/admission-form" > Student Admission (UG)</a></button>
+      <button><a routerLink="/post-admission" > Student Admission (PG)</a></button>
+      <button ><a routerLink="/sign-in">Log in</a></button>
+  </body>
+</div>
 <router-outlet></router-outlet>
